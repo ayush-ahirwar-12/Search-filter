@@ -1,24 +1,26 @@
-let bank = (function () {
-  let bankbalance = 12000;
-  function checkbalance() {
-    console.log(bankbalance);
-  }
-  function setBalance(newbalance) {
-    bankbalance = newbalance;
-    console.log(bankbalance);
-  }
-  function withdraw(val){
-    bankbalance-=val;
-    console.log(`${val} has been deducted from your acc.available balance ${bankbalance}`);
-    
-  }
+function createProduct(name, price) {
+  let stock = 10;
   return {
-    checkbalance,
-    setBalance,
-    wd:withdraw
-  }
-})();
+    name,
+    price,
+    checkStock() {
+      console.log(stock);
+    },
+    buy(qty) {
+      if (qty <= stock) {
+        stock -= qty;
+        console.log(`${qty} has been sold , ${stock} is available`);
+      } else {
+        console.log(`${qty} not available in the stock`);
+      }
+    },
+    refill(qty){
+        stock +=qty;
+        console.log(`available stock ${stock}`);
+        
+    }
+  };
+}
 
-bank.setBalance(15000)
-
-bank.wd(5000)
+let iphone = createProduct("iphone",50000)
+    
