@@ -14,7 +14,7 @@ class youtubeChannel{
     notify(msg){
         this.subscribers.forEach((sub)=>sub.update(msg))
     }
-}
+};
 
 class User{
     constructor(name){
@@ -29,5 +29,5 @@ class User{
 let sheryians = new youtubeChannel();
 let user1 = new User("ayush");
 
-sheryians.subscribe(user1)
-sheryians.notify("WE will go live tonight")
+sheryians.subscribe(user1);
+sheryians.notify("WE will go live tonight");
